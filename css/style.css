@@ -190,6 +190,7 @@ h1, h2, h3, h4, h5, h6{
     margin: 0;
     padding: 0;
     margin-bottom: 1rem;
+    text-rendering: optimizeLegibility;
 }
 
 h1.lead, h2.lead, h3.lead, h4.lead{margin-bottom: 0em; position: relative;}
@@ -459,6 +460,79 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
   opacity: 0.5;
 }
 
+
+ul.timeline {
+    overflow: hidden;
+}
+
+ul.timeline li {
+    list-style: none;
+    position: relative;
+}
+
+ul.timeline li:last-child {
+    height: 6.75em;
+}
+
+ul.timeline li:not(:last-child):before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: -1.85em;
+    top: 0;
+    width: 4px;
+    background-color: #272727;
+    height: 10em;
+    z-index: 0;
+}
+
+ul.timeline li:last-child:before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: -1.85em;
+    top: 0;
+    width: 4px;
+    background: url('../img/bg/ricepaper2.png') repeat;
+    height: 6.75em;
+    z-index: 0;
+}
+
+ul.timeline li:after {
+    background: url('../img/bg/ricepaper2.png') repeat;
+    content: '';
+    position: absolute;
+    font-size: 2em;
+    top: 0;
+    left: -1.25em;
+    height: .75em;
+    width: .75em;
+    border: .125em solid #272727;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+ul.timeline h5{
+    margin-bottom: 0;
+    font-family: "Novecento-l";
+}
+
+ul.timeline h5 strong {
+    font-family: "Novecento";
+}
+
+ul.timeline p{
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+@media only screen and (min-width: 800px) {
+
+    ul.timeline li:last-child:before, ul.timeline li:last-child {
+        height: 3.5em;
+    }
+
+}
 
 
 /*REPONSIVE CLASSES
