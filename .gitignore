@@ -1,4 +1,5 @@
 .DS_Store
 
-js/scripts.min.js
-css/style.min.css
+ASSETS-DONTUPLOAD
+bower_components
+TODO.TXT

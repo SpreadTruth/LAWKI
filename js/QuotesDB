@@ -1,0 +1,21 @@
+var Quotes = {
+	Beginnings: {
+
+		["Home is where your heart is.", "Anonymous "],
+
+		["Home is where your story begins.", "Anonymous"],
+
+		["Anybody who has survived his childhood has enough information about life to last him the rest of his days.", "Flannery O’Connor"],
+
+		["You can do more with a castle in a story than with the best cardboard castle that ever stood on a nursery table", "C. S. Lewis"],
+
+		["There is no greater agony than bearing an untold story inside of you.", "Maya Angelou"],
+
+		["Our stories of worthiness—of being enough—begin in our first families.", "Brene Brown"],
+
+		["To the extent that we’ve got a grip on our stories, we’ve got a grip on our sense of self.", "Scott McClellan"],
+
+		["If you cannot get rid of the family skeleton, you may as well make it dance.", "George Bernard Shaw"]
+
+	}
+}
