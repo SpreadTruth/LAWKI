@@ -42,6 +42,7 @@ $(function() {
 
             //show big video
             bigVideo.init();
+            // bigVideo.show('http://lawki.s3.amazonaws.com/video/SD_Loop1.mp4', {altSource:'http://lawki.s3.amazonaws.com/video/SD_Loop1.ogg'});
 
         },      
                                     

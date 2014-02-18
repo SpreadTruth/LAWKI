@@ -72,6 +72,7 @@
 						.width(windowH*mediaAspect)
 						.height(windowH)
 						.css('top',0)
+						// .css('left', 0);
 						.css('left',-(windowH*mediaAspect-windowW)/2);
 				}
 			} else {
