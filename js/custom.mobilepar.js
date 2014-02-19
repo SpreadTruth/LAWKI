@@ -9,9 +9,9 @@ var mobileParallax = {
     },
 
     resize: function() {
-        this.jsdb.wheight = $(window).height();
-        this.jsdb.wwidth = $(window).width();
-        this.setBGs();
+        mobileParallax.jsdb.wheight = $(window).height();
+        mobileParallax.jsdb.wwidth = $(window).width();
+         mobileParallax.setBGs();
     },
 
     destroy: function() {
@@ -20,7 +20,7 @@ var mobileParallax = {
 
     setBGs: function() {
         var that = this;
-
+        var bgfix = "background-attachment: fixed;";
         var bgprop = 'auto ' + that.jsdb.wheight + 'px';
 
         if(that.jsdb.wwidth > (that.jsdb.wheight * 1.5)) 
@@ -28,7 +28,7 @@ var mobileParallax = {
             bgprop = that.jsdb.wwidth + 'px auto';
         }
 
-        this.el.targets.css({'background-size': bgprop});
+        this.el.targets.css({'background-size': bgprop, 'background-attachment': 'fixed'});
     },
 
     unsetBGs: function() {

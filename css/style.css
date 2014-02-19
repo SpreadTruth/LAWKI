@@ -117,6 +117,12 @@ nav li > a
     width:100%
 }
 
+/*@media only screen and (min-width: 768px) {
+    nav li > a {
+        padding: 1.25em 1em;
+    }
+}*/
+
 nav li > a:hover, nav li > a:active, nav li.active {background-color: #272727; color: #fff;}
 nav li.active > a {color: #fff;}
 
@@ -329,7 +335,7 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
     background-image: url('../img/imgwrap/1.jpg');
     background-position: 50% 50%;
     background-size: 100% auto;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     box-shadow: none;
     text-shadow: 1px 1px 1px rgba(255,255,255,0.125);
 }

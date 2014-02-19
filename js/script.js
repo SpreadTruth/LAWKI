@@ -6,7 +6,7 @@ $(function() {
     $('body').scrollspy({offset: 100});
 
     //set mobile bg's to height of window
-    mobileParallax.resize();
+    // mobileParallax.resize();
 
     //mobile nav
     $('#mr-hamburger').on('click', function() {
@@ -27,6 +27,8 @@ $(function() {
             // mobileParallax.destroy();
             mobileParallax.resize();
 
+            $(document).on('resizeimages', mobileParallax.resize);
+
             //remove hashtags from hrefs of links on top
             $('.main-buttons a:first-child').attr('href', '#');
 
@@ -45,6 +47,9 @@ $(function() {
         unmatch : function() {
             // scroller.destroy();
             $('.main-buttons a').attr('href', '#whatisit');
+
+            $(document).off('resizeimages');
+
             mobileParallax.destroy();
         },    
           
@@ -67,7 +72,8 @@ $(function() {
 
     $(window).resize(function () {
         waitForFinalEvent(function(){
-          mobileParallax.resize();
+          // mobileParallax.resize();
+          $(document).trigger('resizeimages');
         }, 500, "resize bgs");
     });
 
