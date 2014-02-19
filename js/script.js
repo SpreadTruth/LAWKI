@@ -25,9 +25,10 @@ $(function() {
 
             //unset the bg stuff
             // mobileParallax.destroy();
+            mobileParallax.resize();
 
             //remove hashtags from hrefs of links on top
-            $('.main-buttons a').attr('href', '#');
+            $('.main-buttons a:first-child').attr('href', '#');
 
             //determine menu position
             scroller.init();
@@ -44,6 +45,7 @@ $(function() {
         unmatch : function() {
             // scroller.destroy();
             $('.main-buttons a').attr('href', '#whatisit');
+            mobileParallax.destroy();
         },    
           
     });

@@ -6,7 +6,8 @@ var bigVideo = {
     jsdb: {
         BV: null,
         videoPlayer: null,
-        isTouch: Modernizr.touch
+        isTouch: Modernizr.touch,
+        playingFeature: null
     },
 
     el: {
@@ -19,7 +20,12 @@ var bigVideo = {
 
     bindEvents: function() {
         this.el.playBtn.on('click',function(e) { e.preventDefault(); bigVideo.showFeature.apply(bigVideo);});
-        this.el.exitBtn.on('click',function(e) { e.preventDefault(); bigVideo.toggleNav(); bigVideo.showVideo.apply(bigVideo);});
+        this.el.exitBtn.on('click',function(e) { 
+            e.preventDefault(); 
+            if (bigVideo.jsdb.playingFeature) {bigVideo.toggleLogo();}
+            bigVideo.toggleNav();
+            bigVideo.showVideo.apply(bigVideo);
+        });
     },
 
     init: function() {
@@ -50,20 +56,29 @@ var bigVideo = {
     },
 
     onVideoLoaded: function() {
+
+        if(bigVideo.jsdb.playingFeature) { 
+            bigVideo.toggleLogo(); 
+            bigVideo.jsdb.playingFeature = false;
+        }
+
         $('#screen-1').find('.big-image').transit({'opacity':0},500);
     },
 
     showFeature: function() {
+        bigVideo.jsdb.playingFeature = true;
         var videoURL = this.videoSize();
-
+        this.toggleLogo();
         this.toggleNav();
         this.jsdb.BV.show(videoURL);
     },
 
-    toggleNav: function() {
+    toggleLogo: function() {
         //change the background of the main element to be a black background with the life as we know it logo in the background for loading
         this.el.wrapper.toggleClass('loadingBG');
+    },
 
+    toggleNav: function() {
         //toggle all the nav elements off and on
         this.el.overlay.toggleClass('transparent');
         this.el.playingOverlay.toggleClass('transparent');
