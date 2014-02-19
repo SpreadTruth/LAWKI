@@ -1,14 +1,16 @@
 var mobileParallax = {
     jsdb: {
-        wheight: null
+        wheight: null,
+        wwidth: null
     },
 
     el: {
         targets: $('.imgwrap')
     },
 
-    init: function() {
-        this.jsdb.wheight = $(window).height() + "px";
+    resize: function() {
+        this.jsdb.wheight = $(window).height();
+        this.jsdb.wwidth = $(window).width();
         this.setBGs();
     },
 
@@ -19,7 +21,14 @@ var mobileParallax = {
     setBGs: function() {
         var that = this;
 
-        this.el.targets.css({'background-size': 'auto ' + that.jsdb.wheight});
+        var bgprop = 'auto ' + that.jsdb.wheight + 'px';
+
+        if(that.jsdb.wwidth > (that.jsdb.wheight * 1.5)) 
+        {
+            bgprop = that.jsdb.wwidth + 'px auto';
+        }
+
+        this.el.targets.css({'background-size': bgprop});
     },
 
     unsetBGs: function() {

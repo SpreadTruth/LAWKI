@@ -6,7 +6,7 @@ $(function() {
     $('body').scrollspy({offset: 100});
 
     //set mobile bg's to height of window
-    mobileParallax.init();
+    mobileParallax.resize();
 
     //mobile nav
     $('#mr-hamburger').on('click', function() {
@@ -27,6 +27,7 @@ $(function() {
             // mobileParallax.destroy();
 
             //remove hashtags from hrefs of links on top
+            $('.main-buttons a').attr('href', '#');
 
             //determine menu position
             scroller.init();
@@ -42,9 +43,32 @@ $(function() {
                                     
         unmatch : function() {
             // scroller.destroy();
+            $('.main-buttons a').attr('href', '#whatisit');
         },    
           
     });
+
+
+    var waitForFinalEvent = (function () {
+      var timers = {};
+      return function (callback, ms, uniqueId) {
+        if (!uniqueId) {
+          uniqueId = "Don't call this twice without a uniqueId";
+        }
+        if (timers[uniqueId]) {
+          clearTimeout (timers[uniqueId]);
+        }
+        timers[uniqueId] = setTimeout(callback, ms);
+      };
+    })();
+
+
+    $(window).resize(function () {
+        waitForFinalEvent(function(){
+          mobileParallax.resize();
+        }, 500, "resize bgs");
+    });
+
 
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
