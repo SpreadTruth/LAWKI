@@ -76,9 +76,9 @@ var bigVideo = {
         videoSizes = [480,640,1280],
 
         videoLocations = [
-            'http://vimeo.com/71136459/download?t=1375887273&v=179659022&s=fe8fa5445c25c46bc41ed1be732323ac',
-            'http://vimeo.com/71136459/download?t=1375887273&v=179659029&s=99b2eb8c125dbe5ee328813418e5ce23',
-            'http://vimeo.com/71136459/download?t=1375887273&v=179659028&s=2aab702fc44a74f6d46ba9eadc5aa87a'
+            'http://vimeo.com/86572285/download?t=1392817645&v=228333840&s=5cb141899d60c2316e29a9cf2c0b7957',
+            'http://vimeo.com/86572285/download?t=1392817645&v=228333833&s=9cbfb5e7eedd22ac13d67e19d6a3c4fc',
+            'http://vimeo.com/86572285/download?t=1392817645&v=228333838&s=28e4626eef7ec4d702ddae8fb135159d'
         ];
 
         for(var i = 0; i<videoSizes.length; i++) {
