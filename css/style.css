@@ -334,10 +334,14 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
     font-weight: 100;
     background-image: url('../img/imgwrap/1.jpg');
     background-position: 50% 50%;
-    background-size: 100% auto;
+    background-size: cover;
     /*background-attachment: fixed;*/
     box-shadow: none;
     text-shadow: 1px 1px 1px rgba(255,255,255,0.125);
+}
+
+@media only screen and (min-width: 768px) {
+    .imgwrap {background-size: 100% auto;}
 }
 
 .imgwrap:after {
