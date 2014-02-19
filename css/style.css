@@ -24,11 +24,11 @@
 
 @font-face {
     font-family: 'blackjackregular';
-    src: url('blackjack-webfont.eot');
-    src: url('blackjack-webfont.eot?#iefix') format('embedded-opentype'),
-         url('blackjack-webfont.woff') format('woff'),
-         url('blackjack-webfont.ttf') format('truetype'),
-         url('blackjack-webfont.svg#blackjackregular') format('svg');
+    src: url('fonts/blackjack-webfont.eot');
+    src: url('fonts/blackjack-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/blackjack-webfont.woff') format('woff'),
+         url('fonts/blackjack-webfont.ttf') format('truetype'),
+         url('fonts/blackjack-webfont.svg#blackjackregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -84,7 +84,11 @@ background-position: center center;
 
 .signup {margin-top: 1em;}
 
-section {padding-top: 5em; overflow: hidden;}
+section {padding-top: 2em; overflow: hidden;}
+
+@media only screen and (min-width: 768px) {
+    section {padding-top: 5em;}
+}
 
 
 /* SECTIONS
@@ -115,7 +119,6 @@ nav li > a
 
 nav li > a:hover, nav li > a:active, nav li.active {background-color: #272727; color: #fff;}
 nav li.active > a {color: #fff;}
-/*.video iframe {margin: 0; width: 100%; height: auto;}*/
 
 .footer {text-align: center;}
 .footer-top {background-color: #474747; color: #efefef; padding-top: 2em; margin-top: 4em;}
@@ -123,6 +126,8 @@ nav li.active > a {color: #fff;}
 .footer li>a {padding: .5em 0; color: #efefef; font-weight: 500;}
 
 .quotes-list {width: 100%;}
+
+.howitworks img {margin-top: 1.5em;}
 
 /* FORM ELEMENTS
 ---------------------------*/
@@ -284,12 +289,16 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
     background: #fff;
     font-weight: 100;
     display: block;
-    margin-top: 4em;
+    margin-top: 2em;
     padding: 5em 0;
     position: relative;
     text-align: center;
     vertical-align: top;
     box-shadow: 0 3px 2px rgba(0,0,0,0.125);
+}
+
+@media only screen and (min-width: 768px) {
+    .quote, .imgwrap { padding-top: 4em;}
 }
 
 .quote:after {
@@ -312,6 +321,7 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
 
 
 .imgwrap {
+    font-family: 'blackjackregular';
     position: relative;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -344,8 +354,8 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
 
 .imgwrap-dark {color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,1);}
 
-#imgwrap1 {background-image: url('../img/imgwrap/3-small.jpg');}
-#imgwrap2 {background-image: url('../img/imgwrap/5.jpg');}
+#imgwrap1 {background-image: url('../img/imgwrap/how.jpg');}
+#imgwrap2 {background-image: url('../img/imgwrap/why.jpg');}
 
 .headline-quote {
     font-family: "blackjackregular";
@@ -379,6 +389,7 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
 }
 
 .video-container {box-shadow: 0px 10px 5px -5px rgba(0,0,0,0.5);}
+.small-video {margin-bottom: 2em;}
 
 
 /* OVERLAY
@@ -504,7 +515,7 @@ ul.timeline li:last-child {
     height: 6.75em;
 }
 
-ul.timeline li:not(:last-child):before {
+ul.timeline li:before {
     content: '';
     position: absolute;
     display: block;
@@ -517,19 +528,13 @@ ul.timeline li:not(:last-child):before {
 }
 
 ul.timeline li:last-child:before {
-    content: '';
-    position: absolute;
-    display: block;
-    left: -1.9em;
-    top: 0;
-    width: 4px;
     background: url('../img/bg/ricepaper2.png') repeat;
     height: 6.75em;
-    z-index: 0;
 }
 
 ul.timeline li:after {
     background: url('../img/bg/ricepaper2.png') repeat;
+    /*background: rgba(0,0,0, 0.25);*/
     content: '';
     position: absolute;
     font-size: 2em;
@@ -540,6 +545,11 @@ ul.timeline li:after {
     border: .125em solid #272727;
     border-radius: 50%;
     z-index: 0;
+}
+
+ul.timeline li:hover:after {
+    background: url('../img/bg/ricepaper2.png') repeat;
+    background: rgba(0,0,0, 1);
 }
 
 ul.timeline h5{

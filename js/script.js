@@ -3,12 +3,7 @@ $(function() {
     $(document).foundation();
 
     //setup smooth scrolling and scrollspying
-    $('.nav-wrapper').localScroll();
     $('body').scrollspy({offset: 100});
-
-    $('#watch-video').on('click', function() {
-        $.scrollTo('#video', 1000, {offset: -70});
-    });
 
     //set mobile bg's to height of window
     mobileParallax.init();
@@ -28,17 +23,16 @@ $(function() {
 
         match : function() {
 
-            //unlink the scroll for watch video
-            $('#watch-video').off('click');
-
             //unset the bg stuff
-            mobileParallax.destroy();
+            // mobileParallax.destroy();
+
+            //remove hashtags from hrefs of links on top
 
             //determine menu position
             scroller.init();
 
             //parallax scrolling
-            $.stellar({horizontalScrolling: false});
+            // $.stellar({horizontalScrolling: false});
 
             //show big video
             bigVideo.init();
@@ -47,11 +41,27 @@ $(function() {
         },      
                                     
         unmatch : function() {
-            scroller.destroy();
+            // scroller.destroy();
         },    
           
     });
 
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
 
 
 });

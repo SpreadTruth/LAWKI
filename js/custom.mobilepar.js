@@ -19,7 +19,7 @@ var mobileParallax = {
     setBGs: function() {
         var that = this;
 
-        this.el.targets.css({'background-size': 'auto, ' + that.jsdb.wheight});
+        this.el.targets.css({'background-size': 'auto ' + that.jsdb.wheight});
     },
 
     unsetBGs: function() {
