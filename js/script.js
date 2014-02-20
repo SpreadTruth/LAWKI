@@ -1,6 +1,6 @@
 $(function() {
 
-    $(document).foundation();
+    $(document).foundation().scrollTop(0);
 
     //setup smooth scrolling and scrollspying
     $('body').scrollspy({offset: 100});
@@ -34,9 +34,6 @@ $(function() {
 
             //determine menu position
             scroller.init();
-
-            //parallax scrolling
-            // $.stellar({horizontalScrolling: false});
 
             //show big video
             bigVideo.init();
