@@ -54,7 +54,6 @@ var bigVideo = {
     showVideo: function() {
         var videosrc = $('#screen-1').attr('data-video'),
             videoraw = videosrc.substring(0, videosrc.lastIndexOf('.'));
-            debugger;
         this.jsdb.BV.show(videoraw+".mp4",{ambient:true, altSource: videoraw+".ogv"});
     },
 
@@ -73,7 +72,7 @@ var bigVideo = {
         var videoURL = this.videoSize();
         this.toggleLogo();
         this.toggleNav();
-        this.jsdb.BV.show(videoURL);
+        this.jsdb.BV.show(videoURL, {altSource: 'http://lawki.s3.amazonaws.com/video/HD_Loop1.ogv'});
     },
 
     toggleLogo: function() {
@@ -99,6 +98,7 @@ var bigVideo = {
             'http://vimeo.com/86572285/download?t=1392817645&v=228333838&s=28e4626eef7ec4d702ddae8fb135159d'
         ];
 
+        // debugger;
         for(var i = 0; i<videoSizes.length; i++) {
             if (width <= (videoSizes[i]+(100*(1+i)))) {return videoLocations[i];}
         };

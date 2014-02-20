@@ -295,7 +295,6 @@
 					isQueued = false;
 				}
 			} else {
-				debugger;
 				if (options.altSource && navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 						source = options.altSource;
 					}
