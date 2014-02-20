@@ -38,7 +38,7 @@ var bigVideo = {
         if (!this.jsdb.isTouch) {
             
             // initialize BigVideo
-            bigVideo.jsdb.BV = new $.BigVideo({forceAutoplay:bigVideo.jsdb.isTouch, useFlashForFirefox:true});
+            bigVideo.jsdb.BV = new $.BigVideo({forceAutoplay:true, useFlashForFirefox:false});
             bigVideo.jsdb.BV.init();
 
             this.showVideo();
@@ -52,7 +52,10 @@ var bigVideo = {
     },
 
     showVideo: function() {
-        this.jsdb.BV.show($('#screen-1').attr('data-video'),{ambient:true});
+        var videosrc = $('#screen-1').attr('data-video'),
+            videoraw = videosrc.substring(0, videosrc.lastIndexOf('.'));
+            debugger;
+        this.jsdb.BV.show(videoraw+".mp4",{ambient:true, altSource: videoraw+".ogv"});
     },
 
     onVideoLoaded: function() {

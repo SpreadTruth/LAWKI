@@ -13,7 +13,7 @@
 
         var defaults = {
 			// If you want to use a single mp4 source, set as true
-			useFlashForFirefox:true,
+			useFlashForFirefox:false,
 			// If you are doing a playlist, the video won't play the first time
 			// on a touchscreen unless the play event is attached to a user click
 			forceAutoplay:false,
@@ -288,10 +288,17 @@
 				if (ext === 'jpg' || ext === 'gif' || ext === 'png') {
 					showPoster(source);
 				} else {
+					if (options.altSource && navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+						source = options.altSource;
+					}
 					playVideo(source);
 					isQueued = false;
 				}
 			} else {
+				debugger;
+				if (options.altSource && navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+						source = options.altSource;
+					}
 				playlist = source;
 				currMediaIndex = 0;
 				playVideo(playlist[currMediaIndex]);
