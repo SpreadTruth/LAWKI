@@ -2,4 +2,5 @@
 
 ASSETS-DONTUPLOAD
 bower_components
+node_modules
 TODO.TXT
