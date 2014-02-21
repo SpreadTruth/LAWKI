@@ -298,6 +298,9 @@
 				if (options.altSource && navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 						source = options.altSource;
 					}
+
+				debugger;
+				
 				playlist = source;
 				currMediaIndex = 0;
 				playVideo(playlist[currMediaIndex]);

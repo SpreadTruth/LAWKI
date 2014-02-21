@@ -72,7 +72,7 @@ var bigVideo = {
         var videoURL = this.videoSize();
         this.toggleLogo();
         this.toggleNav();
-        this.jsdb.BV.show(videoURL, {altSource: 'http://lawki.s3.amazonaws.com/video/HD_Loop1.ogv'});
+        this.jsdb.BV.show(videoURL, {altSource: 'http://static.lifeasweknow.it/video/LifePromo.ogv'});
     },
 
     toggleLogo: function() {
