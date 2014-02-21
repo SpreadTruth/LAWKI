@@ -668,7 +668,7 @@ ul.rslides_tabs {
     color: #fff;
     font-family: "Novecento";
     text-decoration: none;
-    background-color: #8c8c8c;
+    background-color: transparent;
     padding: 1em;
     width: 3em;
     height: 3em;
@@ -685,5 +685,9 @@ ul.rslides_tabs {
 
 .rslides_tabs .rslides_here a {
     background-color: #272727;
-    color: #fff;
+    color: transparent;
+}
+
+.rslides img {
+    float: none;
 }
