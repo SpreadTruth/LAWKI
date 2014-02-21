@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    order = require('gulp-order')
+    order = require('gulp-autoprefixer')
     ;
 
 gulp.task('watch', function() {
@@ -35,7 +35,23 @@ gulp.task('public', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['js/*.js', 'js/script.js'])
+  // return gulp.src(['js/*.js', 'js/script.js'])
+  return gulp.src([
+        'js/enquire.min.js',
+        'js/custom.modernizr.js',
+        'js/jquery-1.8.1.min.js',
+        'js/jquery-ui-1.8.22.custom.min.js',
+        'js/jquery.imagesloaded.min.js',
+        'js/video.js',
+        'js/bigvideo.js',
+        'js/jquery.transit.min.js',
+        'js/jquery.fitvids.js',
+        'js/jquery.scrollspy.min.js',
+        'js/custom.bigvideo.js',
+        'js/custom.mobilepar.js',
+        'js/custom.scroller.js',
+        'js/script.js'
+        ])
         .pipe(concat('main.js'))
         .pipe(gulp.dest('dist/assets/js'))
         .pipe(rename({suffix: '.min'}))

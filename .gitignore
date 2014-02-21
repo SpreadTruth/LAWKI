@@ -1,6 +1,7 @@
 .DS_Store
-
 dist
+dist/*
+dist/**/*
 ASSETS-DONTUPLOAD
 bower_components
 node_modules
