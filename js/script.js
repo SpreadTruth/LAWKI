@@ -1,6 +1,6 @@
 $(function() {
 
-    $(document).foundation().scrollTop(0);
+    $(document).scrollTop(0);
 
     //setup smooth scrolling and scrollspying
     $('body').scrollspy({offset: 100});
