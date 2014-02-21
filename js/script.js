@@ -1,6 +1,12 @@
 $(function() {
 
+    //fixes Chrome problem
     $(document).scrollTop(0);
+
+    $(".rslides").responsiveSlides({
+      auto: false,
+      pager: true
+    });
 
     //setup smooth scrolling and scrollspying
     $('body').scrollspy({offset: 100});

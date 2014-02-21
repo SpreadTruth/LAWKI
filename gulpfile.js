@@ -65,6 +65,7 @@ gulp.task('scripts', function() {
         'js/custom.bigvideo.js',
         'js/custom.mobilepar.js',
         'js/custom.scroller.js',
+        'js/responsiveslides.min.js',
         'js/script.js'
         ])
         .pipe(concat('main.js'))

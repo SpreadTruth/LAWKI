@@ -648,3 +648,42 @@ ul.timeline p{
 
 /* Used to alter styles for screens at least 1440px wide. */
 @media only screen and (min-width: 1440px) { }
+
+
+
+ul.rslides_tabs {
+    margin: 0;
+    padding: 0;
+}
+
+.rslides_tabs li {
+    display: inline-block;
+}
+
+.rslides_tabs li:not(:first-child) {
+    margin-left: 15px;
+}
+
+.rslides_tabs a {
+    color: #fff;
+    font-family: "Novecento";
+    text-decoration: none;
+    background-color: #8c8c8c;
+    padding: 1em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    padding-top: 1em;
+    display: inline-block;
+    transition: 0.25s;
+}
+
+.rslides_tabs a:hover {
+    background-color: #fff;
+    color: #272727;
+}
+
+.rslides_tabs .rslides_here a {
+    background-color: #272727;
+    color: #fff;
+}
