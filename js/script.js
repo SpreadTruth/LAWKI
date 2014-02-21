@@ -1,7 +1,7 @@
 $(function() {
 
     //fixes Chrome problem
-    $(document).scrollTop(0);
+    // $(document).scrollTop(0);
 
     $(".rslides").responsiveSlides({
       auto: false,
