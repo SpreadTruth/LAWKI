@@ -515,7 +515,9 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
 
 
 ul.timeline {
+    padding: 0;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 ul.timeline li {
@@ -523,11 +525,15 @@ ul.timeline li {
     position: relative;
 }
 
-ul.timeline li:last-child {
-    height: 6.75em;
+ul.timeline li:last-child p{
+    margin-bottom: 0;
 }
 
-ul.timeline li:before {
+/*ul.timeline li:last-child {
+    height: 6.75em;
+}*/
+
+/*ul.timeline li:before {
     content: '';
     position: absolute;
     display: block;
@@ -546,7 +552,6 @@ ul.timeline li:last-child:before {
 
 ul.timeline li:after {
     background: url('../img/bg/ricepaper2.png') repeat;
-    /*background: rgba(0,0,0, 0.25);*/
     content: '';
     position: absolute;
     font-size: 2em;
@@ -557,12 +562,12 @@ ul.timeline li:after {
     border: .125em solid #272727;
     border-radius: 50%;
     z-index: 0;
-}
+}*/
 
-ul.timeline li:hover:after {
+/*ul.timeline li:hover:after {
     background: url('../img/bg/ricepaper2.png') repeat;
     background: rgba(0,0,0, 1);
-}
+}*/
 
 ul.timeline h5{
     margin-bottom: 0;
@@ -578,13 +583,13 @@ ul.timeline p{
     margin-bottom: 1.5em;
 }
 
-@media only screen and (min-width: 800px) {
+/*@media only screen and (min-width: 800px) {
 
     ul.timeline li:last-child:before, ul.timeline li:last-child {
         height: 3.5em;
     }
 
-}
+}*/
 
 
 /*REPONSIVE CLASSES
@@ -661,11 +666,11 @@ ul.rslides_tabs {
 }
 
 .rslides_tabs li:not(:first-child) {
-    margin-left: 15px;
+    margin-left: 10em;
 }
 
 .rslides_tabs a {
-    color: #fff;
+    color: transparent;
     font-family: "Novecento";
     text-decoration: none;
     background-color: transparent;
@@ -676,11 +681,13 @@ ul.rslides_tabs {
     padding-top: 1em;
     display: inline-block;
     transition: 0.25s;
+    background-color: #F3F2F2;
+    border: .45em solid #272727;
 }
 
 .rslides_tabs a:hover {
-    background-color: #fff;
-    color: #272727;
+    /*background-color: #fff;*/
+    color: transparent;
 }
 
 .rslides_tabs .rslides_here a {
@@ -690,4 +697,21 @@ ul.rslides_tabs {
 
 .rslides img {
     float: none;
+}
+
+.slider-nav {
+    position: relative;
+    top: -2.5em;
+}
+
+.slider-nav:before {
+    content: '';
+    position: relative;
+    left: -100%;
+    top: 1.7em;
+    background-color: #272727;
+    height: 7px;
+    width: 9999px;
+    display: block;
+    z-index: -1;
 }

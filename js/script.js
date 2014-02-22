@@ -5,6 +5,7 @@ $(function() {
 
     $(".rslides").responsiveSlides({
       auto: false,
+      navContainer: $("#slider-nav"),
       pager: true
     });
 
