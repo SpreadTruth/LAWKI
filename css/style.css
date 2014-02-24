@@ -474,8 +474,14 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
     text-align: center;
     width: 100%;
     position: absolute;
-    bottom: 3em;
+    bottom: 2em;
     /*left: 50%;*/
+}
+
+@media only screen and (min-width: 768px) {
+    .main-buttons {
+        bottom: 3em;
+    }
 }
 
 .main-buttons .btn {width: 13em;}
@@ -654,7 +660,17 @@ ul.timeline p{
 /* Used to alter styles for screens at least 1440px wide. */
 @media only screen and (min-width: 1440px) { }
 
+ul.host {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
+ul.host h1.lead {
+    font-size: 2em;
+}
+
+ul.host img {margin-bottom: 2em;}
 
 ul.rslides_tabs {
     margin: 0;
@@ -666,7 +682,11 @@ ul.rslides_tabs {
 }
 
 .rslides_tabs li:not(:first-child) {
-    margin-left: 10em;
+    margin-left: 15%;
+}
+
+.rslides_tabs li:first-child {
+    margin-left: 5%;
 }
 
 .rslides_tabs a {
@@ -686,7 +706,7 @@ ul.rslides_tabs {
 }
 
 .rslides_tabs a:hover {
-    /*background-color: #fff;*/
+    background-color: #AAA;
     color: transparent;
 }
 

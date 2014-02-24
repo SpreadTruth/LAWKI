@@ -30,7 +30,7 @@ $(function() {
             $('.main-buttons a:first-child').attr('href', '#');
 
 
-            $('#hostagathering').find('ul').addClass('rslides');
+            $('#hostagathering').find('ul').removeClass('host').addClass('rslides');
 
             //setup responsive slider
             $(".rslides").responsiveSlides({
