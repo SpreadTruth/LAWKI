@@ -20,13 +20,13 @@ $(function() {
     // }, {offset: '5%'});
 
 
-    $(".rslides").responsiveSlides({
-        auto: true,
-        navContainer: $("#slider-nav"),
-        pager: true,
-        pause: true,
-        timout: 7000
-      });
+    // $(".rslides").responsiveSlides({
+    //     auto: true,
+    //     navContainer: $("#slider-nav"),
+    //     pager: true,
+    //     pause: true,
+    //     timout: 7000
+    //   });
 
     //setup smooth scrolling and scrollspying
     $('body').scrollspy({offset: 100});
