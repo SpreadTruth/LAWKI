@@ -1,13 +1,32 @@
 $(function() {
 
     //fixes Chrome problem
-    // $(document).scrollTop(0);
+    $(document).scrollTop(0);
+
+    $('#hostagathering').waypoint(function(direction) {
+
+      if(direction === "up") {return false;}
+
+      $('.rslides1_s1').trigger('click');
+
+    }, {offset: '80%'});
+
+    // $('#hostagathering').waypoint(function(direction) {
+
+    //   if(direction === "up") {return false;}
+
+    //   $('.rslides1_s3').trigger('click');
+      
+    // }, {offset: '5%'});
+
 
     $(".rslides").responsiveSlides({
-      auto: false,
-      navContainer: $("#slider-nav"),
-      pager: true
-    });
+        auto: true,
+        navContainer: $("#slider-nav"),
+        pager: true,
+        pause: true,
+        timout: 7000
+      });
 
     //setup smooth scrolling and scrollspying
     $('body').scrollspy({offset: 100});
@@ -40,7 +59,31 @@ $(function() {
             $('.main-buttons a:first-child').attr('href', '#');
 
             //determine menu position
-            scroller.init();
+            // scroller.init();
+
+
+
+            $('nav').removeClass('sticky').waypoint(function(direction) {
+
+              var down = function() {
+                $('nav').addClass('sticky');
+                $('#big-video-wrap').hide();
+              }
+
+              var up = function() {
+                $('nav').removeClass('sticky');
+                $('#big-video-wrap').show();
+              }
+
+              if (direction === 'up') {
+                up();
+                return;
+              }
+
+              down();
+
+
+            });
 
             //show big video
             bigVideo.init();
@@ -53,6 +96,8 @@ $(function() {
             $('.main-buttons a').attr('href', '#whatisit');
 
             $(document).off('resizeimages');
+
+            $('nav').removeClass('sticky').waypoint('destroy');
 
             mobileParallax.destroy();
         },    
