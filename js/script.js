@@ -3,41 +3,12 @@ $(function() {
     //fixes Chrome problem
     $(document).scrollTop(0);
 
-    $('#hostagathering').waypoint(function(direction) {
-
-      if(direction === "up") {return false;}
-
-      $('.rslides1_s1').trigger('click');
-
-    }, {offset: '80%'});
-
-    // $('#hostagathering').waypoint(function(direction) {
-
-    //   if(direction === "up") {return false;}
-
-    //   $('.rslides1_s3').trigger('click');
-      
-    // }, {offset: '5%'});
-
-
-    // $(".rslides").responsiveSlides({
-    //     auto: true,
-    //     navContainer: $("#slider-nav"),
-    //     pager: true,
-    //     pause: true,
-    //     timout: 7000
-    //   });
-
     //setup smooth scrolling and scrollspying
     $('body').scrollspy({offset: 100});
-
-    //set mobile bg's to height of window
-    // mobileParallax.resize();
 
     //mobile nav
     $('#mr-hamburger').on('click', function() {
         $('.menu').toggleClass('rotate');
-        // $('.menu').transition({rotate: '45deg'});
         $('nav').toggleClass('open');
     });
 
@@ -49,20 +20,37 @@ $(function() {
 
         match : function() {
 
-            //unset the bg stuff
-            // mobileParallax.destroy();
+            //fixed backgrounds on desktop
             mobileParallax.resize();
 
+            //when the screen is resized, resize the backgrounds as well
             $(document).on('resizeimages', mobileParallax.resize);
 
             //remove hashtags from hrefs of links on top
             $('.main-buttons a:first-child').attr('href', '#');
 
-            //determine menu position
-            // scroller.init();
 
+            $('#hostagathering').find('ul').addClass('rslides');
 
+            //setup responsive slider
+            $(".rslides").responsiveSlides({
+                auto: true,
+                navContainer: $("#slider-nav"),
+                pager: true,
+                pause: true,
+                timout: 7000
+              });
 
+            //setup auto change when scrolling down the page
+            $('#hostagathering').waypoint(function(direction) {
+
+              if(direction === "up") {return false;}
+
+              $('.rslides1_s1').trigger('click');
+
+            }, {offset: '80%'});
+
+            //set up sticky nav
             $('nav').removeClass('sticky').waypoint(function(direction) {
 
               var down = function() {
@@ -87,12 +75,10 @@ $(function() {
 
             //show big video
             bigVideo.init();
-            // bigVideo.show('http://lawki.s3.amazonaws.com/video/SD_Loop1.mp4', {altSource:'http://lawki.s3.amazonaws.com/video/SD_Loop1.ogg'});
 
         },      
                                     
         unmatch : function() {
-            // scroller.destroy();
             $('.main-buttons a').attr('href', '#whatisit');
 
             $(document).off('resizeimages');
