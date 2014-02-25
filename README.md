@@ -1,5 +1,4 @@
 #LAWKI
-====
 
 ###A new community building tool that Spread Truth will be releasing in late February or early March
 
