@@ -4,7 +4,7 @@ $(function() {
     $(document).scrollTop(0);
 
     //setup smooth scrolling and scrollspying
-    $('body').scrollspy({offset: 100});
+    // $('body').scrollspy({offset: 100});
 
     //mobile nav
     $('#mr-hamburger').on('click', function() {
@@ -75,6 +75,8 @@ $(function() {
 
             //show big video
             bigVideo.init();
+
+            $('body').scrollspy({offset: 100});
 
         },      
                                     
