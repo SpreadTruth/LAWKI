@@ -17,6 +17,9 @@ gulp.task('watch', function() {
   // Watch .scss files
   gulp.watch('css/**/*', ['styles']);
 
+  // Watch font files
+  gulp.watch('css/fonts/*', ['fonts']);
+
   // Watch .js files
   gulp.watch('js/**/*.js', ['scripts']);
 
@@ -34,19 +37,28 @@ gulp.task('public', function() {
         .pipe(notify({message: 'Public files copied', onLast: true }));
 });
 
+gulp.task('fonts', function() {
+    return gulp.src(['css/fonts/*'])
+        .pipe(gulp.dest('dist/assets/css/fonts'))
+        .pipe(notify({message: 'Font files copied', onLast: true }));
+});
+
 gulp.task('styles', function() {
   // return gulp.src('src/styles/main.scss')
-  //   .pipe(sass({ style: 'expanded' }))
-  //   .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-  //   .pipe(gulp.dest('dist/assets/css'))
-  //   .pipe(rename({suffix: '.min'}))
-  //   .pipe(minifycss())
-  //   .pipe(gulp.dest('dist/assets/css'))
-  //   .pipe(notify({ message: 'Styles task complete' }));
-
-  return gulp.src('css/**/*')
-        .pipe(gulp.dest('dist/assets/css'))
-        .pipe(notify({message: 'Styles task complete', onLast: true}));
+    // .pipe(sass({ style: 'expanded' }))
+  return gulp.src([
+        'css/foundation.min.css',
+        'css/responsiveslides.css',
+        'css/style.css',
+        'css/bigvideo.css'
+    ])
+    .pipe(concat('main.css'))
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(notify({message: 'Styles task complete', onLast: true}));
 });
 
 gulp.task('scripts', function() {
@@ -84,12 +96,12 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean', function() {
-  return gulp.src(['dist/assets/css', 'dist/assets/js', 'dist/assets/img', 'dist/'], {read: false})
+  return gulp.src(['dist/assets/css/**/*', 'dist/assets/js', 'dist/assets/img', 'dist/'], {read: false})
         .pipe(clean())
         .pipe(notify({ message: 'Dist directory cleaned', onLast: true }));
 });
 
 gulp.task('default', ['clean'], function() {
-        gulp.start('scripts', 'styles', 'public', 'images');
+        gulp.start('scripts', 'styles', 'public', 'images', 'fonts');
         // gulp.start('styles', 'scripts', 'images');
 });
