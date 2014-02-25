@@ -763,3 +763,28 @@ ul.rslides_tabs {
     background-color: #272727;
     content: '';
 }
+
+.rslides_nav {
+font-size: 1.75em;
+text-decoration: none;
+color: #efefef;
+background-color: #272727;
+height: 3em;
+width: 3em;
+display: inline-block;
+border-radius: 50%;
+padding: 1em;
+padding-left: 1.15em;
+font-family: "Novecento-l";
+position: absolute;
+top: 12em;
+z-index: 999;
+}
+
+.rslides_nav.prev {
+    left: 0;
+}
+
+.rslides_nav.next {
+    right: 0;
+}

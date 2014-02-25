@@ -36,6 +36,9 @@ $(function() {
             $(".rslides").responsiveSlides({
                 auto: true,
                 navContainer: $("#slider-nav"),
+                nav: true,
+                prevText: '&lt;',
+                nextText: '&gt;',
                 pager: true,
                 pause: true,
                 timout: 7000
