@@ -478,6 +478,10 @@ p.x-small {font-size: .75em; letter-spacing: 1px; margin-bottom: 1.4rem;}
     /*left: 50%;*/
 }
 
+.main-buttons .btn {
+    
+}
+
 @media only screen and (min-width: 768px) {
     .main-buttons {
         bottom: 3em;
@@ -716,7 +720,7 @@ ul.rslides_tabs {
 }
 
 .rslides img {
-    float: none;
+    /*float: none;*/
 }
 
 .slider-nav {
