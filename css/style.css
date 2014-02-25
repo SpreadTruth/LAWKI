@@ -135,6 +135,8 @@ nav li.active > a {color: #fff;}
 
 .howitworks img {margin-top: 1.5em;}
 
+.hostagathering {position: relative;}
+
 /* FORM ELEMENTS
 ---------------------------*/
 
@@ -764,11 +766,21 @@ ul.rslides_tabs {
     content: '';
 }
 
+
+/*nav container*/
+
+.slider-btns {
+    position: absolute;
+    top: 57%;
+    width: 100%;
+    /*margin-top: -1.5em;*/
+}
+
 .rslides_nav {
 font-size: 1.75em;
 text-decoration: none;
 color: #efefef;
-background-color: #272727;
+background-color: rgba(0,0,0,0.25);
 height: 3em;
 width: 3em;
 display: inline-block;
@@ -777,14 +789,18 @@ padding: 1em;
 padding-left: 1.15em;
 font-family: "Novecento-l";
 position: absolute;
-top: 12em;
-z-index: 999;
+z-index: 3;
+transition: 0.25s;
+}
+
+.rslides_nav:hover {
+    background-color: #272727;
 }
 
 .rslides_nav.prev {
-    left: 0;
+    left: 2em;
 }
 
 .rslides_nav.next {
-    right: 0;
+    right: 2em;
 }

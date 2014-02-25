@@ -35,7 +35,8 @@ $(function() {
             //setup responsive slider
             $(".rslides").responsiveSlides({
                 auto: true,
-                navContainer: $("#slider-nav"),
+                navContainer: "#slider-btns",
+                pagerContainer: "#slider-nav",
                 nav: true,
                 prevText: '&lt;',
                 nextText: '&gt;',
