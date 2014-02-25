@@ -536,12 +536,28 @@ ul.timeline {
 }
 
 ul.timeline li {
-    position: relative;
     list-style: none;
+    border-bottom: 1px solid #272727;
+    padding-top: 2em;
 }
 
-ul.timeline li:last-child p{
-    margin-bottom: 0;
+ul.timeline li:first-child {
+    padding-top: 1em;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+    ul.timeline li {
+        padding-top: 0;
+        border-bottom: none;
+    }
+
+    ul.timeline li:last-child p{
+        margin-bottom: 0;
+    }
+
 }
 
 /*ul.timeline li:last-child {
@@ -673,20 +689,19 @@ ul.timeline p{
 .side-list {
     margin: 0;
     padding: 0;
-    border-radius: 10px;
-    background-color: #272727;
-    color: #F3F2F2;
+    padding-left: 1.9em;
+    color: #272727;
     list-style: none;
     font-size: 0.875em;
-    font-family: "Novecento-l";
+    font-family: "Novecento";
+    border-left: 1px solid #272727;
 }
 
 .side-list li {
     display: block;
     margin: 0;
     padding: 0.5em 1em;
-    /*border-bottom: 1px solid #F3F2F2;*/
-    border-bottom: 1px solid rgba(255,255,255,0.5);
+    padding-left: 0;
 }
 
 
