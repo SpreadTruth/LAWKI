@@ -54,6 +54,18 @@ $(function() {
 
             }, {offset: '80%'});
 
+            $('h1.timeline').waypoint(function(direction) {
+
+              if (direction === "down") {
+                $(this).addClass('current');
+              }
+
+              if (direction === "up") {
+                $(this).removeClass('current');
+              }
+
+            }, {offset: '50%'});
+
             //set up sticky nav
             $('nav').removeClass('sticky').waypoint(function(direction) {
 

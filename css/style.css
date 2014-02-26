@@ -241,8 +241,14 @@ h1.timeline:after {
   height: .75em;
   border: .125em solid #272727;
   border-radius: 50%;
-  background: url('../img/bg/ricepaper2.png') repeat;
+  /*background: url('../img/bg/ricepaper2.png') repeat;*/
+  background-color: #F3F2F2;
   content: '';
+  transition: .25s;
+}
+
+h1.timeline.current:after {
+    background-color: #272727;
 }
 
 h1.timeline:before {
@@ -756,7 +762,6 @@ ul.rslides_tabs {
     height: 3em;
     border: .45em solid #272727;
     border-radius: 50%;
-    background-color: transparent;
     background-color: #F3F2F2;
     color: transparent;
     text-decoration: none;
