@@ -78,6 +78,7 @@ gulp.task('scripts', function() {
         'js/custom.bigvideo.js',
         'js/custom.mobilepar.js',
         'js/waypoints.min.js',
+        'js/fastclick.js',
         'js/responsiveslides.js',
         'js/script.js'
         ])

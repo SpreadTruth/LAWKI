@@ -3,13 +3,22 @@ $(function() {
     //fixes Chrome problem
     $(document).scrollTop(0);
 
-    //setup smooth scrolling and scrollspying
-    // $('body').scrollspy({offset: 100});
+    //fastclick
+    FastClick.attach(document.body);
 
     //mobile nav
+    var navToggle = function() {
+      $('.menu').toggleClass('rotate');
+      $('nav').toggleClass('open');
+    };
+
     $('#mr-hamburger').on('click', function() {
-        $('.menu').toggleClass('rotate');
-        $('nav').toggleClass('open');
+        navToggle();
+    });
+
+    $('#main-nav a').on('click', function() {
+      console.log('clicked');
+      navToggle();
     });
 
     //attach the watch video 
@@ -19,6 +28,8 @@ $(function() {
     enquire.register("screen and (min-width:768px)", {
 
         match : function() {
+
+            $('#main-nav').off('click');
 
             //fixed backgrounds on desktop
             mobileParallax.resize();
