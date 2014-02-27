@@ -286,7 +286,7 @@
 			if (typeof(source) === 'string') {
 				var ext = source.substring(source.lastIndexOf('.')+1);
 				if (ext === 'jpg' || ext === 'gif' || ext === 'png') {
-					showPoster(source);
+					// showPoster(source);
 				} else {
 					if (options.altSource && navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 						source = options.altSource;
@@ -299,8 +299,6 @@
 						source = options.altSource;
 					}
 
-				debugger;
-				
 				playlist = source;
 				currMediaIndex = 0;
 				playVideo(playlist[currMediaIndex]);
