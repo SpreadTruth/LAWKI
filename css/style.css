@@ -878,3 +878,32 @@ ul.rslides_tabs {
         right: 2em;
     }
 }
+
+
+.over-overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    z-index: 999999;
+    height: 100%;
+    width: 100%;
+    display: block;
+    color: white;
+    opacity: 0;
+    transition: 0.5s;
+    display: table;
+}
+
+.contain-middle {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.over-overlay.oshow {
+    opacity: 1;
+    visibility: visible;
+}
