@@ -469,16 +469,67 @@ p.x-small { margin-bottom: 1.4rem; letter-spacing: 1px;font-size: .75em;}
     transition: .25s;
 }
 
-.btn-round {border-radius: 2em;}
-
 .btn-border {border: 2px solid #fff;}
 
 .btn-white { border-color: #fff;background-color: rgba(255,255,255,0.15);}
 .btn-white:hover {background-color: rgba(255,255,255,0.5);}
 
-.btn-black { border-color: #272727;background-color: transparent; color: #272727;}
+.btn-black, .btn-black-fill { border-color: #272727;background-color: transparent; color: #272727;}
 .btn-black:hover {background-color: #272727; color: #efefef;}
 
+.btn-black-fill {background-color: #272727; color: #fff;}
+.btn-black-fill:hover {background-color: transparent; color: #272727;}
+
+
+.outline-buttons {
+    margin-left: 8em;
+}
+
+.outline-buttons.right {
+    margin: 0;
+    margin-right: 9em;
+}
+
+.outline-buttons .btn {
+    margin: 0;
+    margin-top: 2.25em;
+    float: left;
+}
+
+.outline-buttons.right .btn {
+    float: right;
+}
+
+.outline {
+  display: block;
+  border-width: 0 0 2px 2px;
+  border-color: #272727;
+  border-style: solid;
+  width: 4em;
+  height: 4em;
+  position: relative;
+  float: left;
+}
+
+.outline.outline-right {
+  border-width: 0 2px 2px 0;
+  float: right;
+}
+
+.bubble {
+  display: block;
+  height: 1em;
+  width: 1em;
+  background-color: #272727;
+  border-radius: 50%;
+  margin-left: -0.55em;
+}
+
+.outline-right .bubble {
+  float: right;
+  margin: 0;
+  margin-right: -0.55em;
+}
 
 .main-buttons {
     position: absolute;
@@ -585,7 +636,7 @@ ul.timeline p{
 }
 
 @media only screen and (min-width: 768px) {
-    .feature-image img {margin: 2em auto;}
+    .feature-image img {margin: 2em auto 0 auto;}
 }
 
 
