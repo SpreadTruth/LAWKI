@@ -77,6 +77,7 @@ gulp.task('scripts', function() {
         'js/jquery.scrollspy.min.js',
         'js/custom.bigvideo.js',
         'js/custom.mobilepar.js',
+        // 'js/videoOverlay.js',
         'js/waypoints.min.js',
         'js/fastclick.js',
         'js/responsiveslides.js',

@@ -105,6 +105,43 @@ $(function() {
 
             $('body').scrollspy({offset: 100});
 
+            //video overlay
+
+            var enterOverlay = function(video_url) {
+              $('.contain-middle')
+              .append("<iframe src='http://player.vimeo.com/video/"+video_url+"?title=0&amp;byline=0&amp;portrait=0;autoplay=1'frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>")
+              .fitVids()
+              .parent()
+              .addClass('oshow');
+            };
+
+            var exitoverlay = function(e) {
+              
+              e.preventDefault();
+              // turn off close button
+              $('#exit-overlay').off('click');
+
+              $('.over-overlay').removeClass('oshow');
+
+              setTimeout(function() {$('.contain-middle').html('');}, 500);
+
+            };
+
+            $('.outline-buttons a').on('click', function(e) {
+              e.preventDefault();
+
+              var video_url = $(this).data('video');
+
+              enterOverlay(video_url);
+
+              // enable close button
+              $('#exit-overlay').on('click', exitoverlay);
+
+            });
+
+            //PLEASE PLEASE PLEASE CLEAN THIS CRAP UP WHEN YOU CAN
+            //REFERENCE videoOverlay.js (its almost done)
+
         },      
                                     
         unmatch : function() {
@@ -161,36 +198,5 @@ $(function() {
 
 
 
-var enterOverlay = function(video_url) {
-  $('.contain-middle')
-  .append("<iframe src='http://player.vimeo.com/video/"+video_url+"?title=0&amp;byline=0&amp;portrait=0;autoplay=1'frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>")
-  .fitVids()
-  .parent()
-  .addClass('oshow');
-};
-
-var exitoverlay = function(e) {
-  
-  e.preventDefault();
-  // turn off close button
-  $('#exit-overlay').off('click');
-
-  $('.over-overlay').removeClass('oshow');
-
-  setTimeout(function() {$('.contain-middle').html('');}, 500);
-
-};
-
-$('.outline-buttons a').on('click', function(e) {
-  e.preventDefault();
-
-  var video_url = $(this).data('video');
-
-  enterOverlay(video_url);
-
-  // enable close button
-  $('#exit-overlay').on('click', exitoverlay);
-
-});
 
 });
