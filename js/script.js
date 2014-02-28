@@ -127,7 +127,7 @@ $(function() {
 
             };
 
-            $('.outline-buttons a').on('click', function(e) {
+            $('.outline-buttons a, #watch-video').on('click', function(e) {
               e.preventDefault();
 
               var video_url = $(this).data('video');
