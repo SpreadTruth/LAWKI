@@ -29,7 +29,7 @@ $(function() {
 
         match : function() {
 
-            $('#main-nav').off('click');
+            $('#main-nav a').off('click');
 
             //fixed backgrounds on desktop
             mobileParallax.resize();
