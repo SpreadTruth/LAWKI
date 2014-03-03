@@ -109,7 +109,7 @@ $(function() {
 
             var enterOverlay = function(video_url) {
               $('.contain-middle')
-              .append("<iframe src='http://player.vimeo.com/video/"+video_url+"?title=0&amp;byline=0&amp;portrait=0;autoplay=1'frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>")
+              .append("<iframe src='http://player.vimeo.com/video/"+video_url+"?title=0&amp;byline=0&amp;portrait=0;autoplay=1' width='500' height='281' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>")
               .fitVids()
               .parent()
               .addClass('oshow');
